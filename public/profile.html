@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakanHub | Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">MakanHub</a>
+    <div class="top-actions">
+      <a href="index.html">Home</a>
+
+  <a href="javascript:history.back()" class="pill">
+    Go Back
+  </a>
+</div>
+  </header>
+
+  <main class="profile-layout">
+    <aside class="profile-card">
+      <div class="avatar" id="avatarPreview">Photo</div>
+      <h2 id="profileCardUsername">username</h2>
+      <p id="profileCardEmail" class="subtext">email@example.com</p>
+
+      <label class="file-btn" for="profilePhoto">Change Photo</label>
+      <input id="profilePhoto" type="file" accept="image/jpeg,image/png" hidden>
+      <p class="small-note">JPG/PNG, maximum 2MB</p>
+
+      <div id="roleBadge" class="role-badge role-customer">Customer</div>
+    </aside>
+
+    <section class="profile-main">
+      <h1>Profile</h1>
+      <p class="subtext">View and update your personal information.</p>
+
+      <form id="profileForm" class="profile-form" novalidate>
+        <div class="field">
+          <label for="profileUsername">Username</label>
+          <input id="profileUsername" name="username" type="text" maxlength="50" required>
+        </div>
+
+        <div class="field">
+          <label for="profileEmail">Email</label>
+          <input id="profileEmail" name="email" type="email" maxlength="100" required>
+        </div>
+
+        <div class="field">
+          <label for="profileAddress">Address</label>
+          <input id="profileAddress" name="address" type="text" maxlength="255" required>
+        </div>
+
+        <div class="field">
+          <label for="profilePhone">Phone number (optional)</label>
+          <input id="profilePhone" name="phone" type="tel" maxlength="15">
+        </div>
+
+        <div class="profile-actions">
+          <button id="saveProfileButton" class="primary-btn" type="submit">Save Changes</button>
+          <button id="logoutButton" class="secondary-btn" type="button">Log Out</button>
+        </div>
+
+        <p id="profileMessage" class="message" aria-live="polite"></p>
+      </form>
+
+      <div class="danger-zone">
+        <h2>Danger Zone</h2>
+        <p class="subtext">Deleting your account permanently removes it. This cannot be undone.</p>
+        <button id="deleteAccountButton" class="danger-btn" type="button">Delete Account</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="profile.js"></script>
+</body>
+</html>

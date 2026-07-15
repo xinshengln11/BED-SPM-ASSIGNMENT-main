@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MakanHub | Set Up Your Stall</title>
+  <link rel="stylesheet" href="signup-vendor.css">
+<script src="signup-vendor.js"></script>
+</head>
+<body>
+  <header class="signup-header">
+    <div class="signup-header-content">
+
+        <a href="index.html" class="signup-brand">
+            MakanHub
+        </a>
+
+        <div class="signup-header-actions">
+
+            <a href="login.html" class="signup-login-link">
+                Login
+            </a>
+
+            <a href="signup.html" class="signup-back-button">
+                Go Back
+            </a>
+
+        </div>
+
+    </div>
+</header>
+
+  <main class="auth-layout">
+    <section class="auth-card">
+      <h1>Set Up Your Stall</h1>
+      <p class="subtext">Tell us a little about your stall.</p>
+
+      <form id="vendorSignupForm" novalidate>
+        <div class="field">
+          <label for="stallName">Stall Name</label>
+          <input id="stallName" name="stallName" type="text" maxlength="100" required>
+        </div>
+
+        <div class="field">
+          <label for="stallUnitNo">Stall Unit Number</label>
+          <input id="stallUnitNo" name="stallUnitNo" type="text" placeholder="#01-12" maxlength="10" required>
+        </div>
+
+        <div class="field">
+          <label for="hawkerCentre">Hawker Centre</label>
+          <select id="hawkerCentre" name="hawkerCentre" class="role-stall-owner" required>
+            <option value="Maxwell Food Centre">Maxwell Food Centre</option>
+            <option value="Chinatown Complex">Chinatown Complex</option>
+            <option value="Old Airport Road Food Centre">Old Airport Road Food Centre</option>
+            <option value="Amoy Street Food Centre">Amoy Street Food Centre</option>
+            <option value="Lau Pa Sat">Lau Pa Sat</option>
+            <option value="Golden Mile Food Centre">Golden Mile Food Centre</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="stallDescription">Stall Description</label>
+          <textarea id="stallDescription" name="stallDescription" rows="4" maxlength="500" required></textarea>
+        </div>
+
+        <button class="primary-btn vendor-btn" type="submit">Register Stall</button>
+        <p id="vendorSignupMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <div class="hero-panel vendor-image" aria-hidden="true"></div>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

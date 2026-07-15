@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order History | MakanHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="orderHistory.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html">MakanHub</a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a class="main-nav__link" href="index.html">Home</a>
+        <a class="main-nav__link" href="stalls.html">Browse Stalls</a>
+        <a class="main-nav__link main-nav__link--active" href="orderHistory.html" aria-current="page">Order History</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="cart-icon" href="cart.html" aria-label="View cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3H5L5.4 5M5.4 5H21L18 13H7L5.4 5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="19" r="1.4" fill="currentColor"/>
+            <circle cx="17" cy="19" r="1.4" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="profile-pill" href="profile.html">Profile</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="order-history">
+    <div class="order-history__container">
+      <h1 class="order-history__title">Order History</h1>
+
+      <form class="filter-bar" id="filterBar">
+        <label class="filter-bar__label" for="statusFilter">Filter by:</label>
+        <select class="filter-bar__select" id="statusFilter" name="status">
+          <option value="all">All</option>
+          <option value="received">Received</option>
+          <option value="preparing">Preparing</option>
+          <option value="ready">Ready</option>
+          <option value="collected">Collected</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+        <button class="filter-bar__button" type="submit">Filter</button>
+      </form>
+
+      <section class="order-list" id="orderList" aria-live="polite">
+        <!-- Order cards are rendered here by orderHistory.js -->
+      </section>
+
+      <p class="order-list__empty" id="emptyState" hidden>No orders found for this filter.</p>
+    </div>
+  </main>
+
+  <script src="orderHistory.js"></script>
+</body>
+</html>

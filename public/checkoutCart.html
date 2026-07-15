@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MakanHub — Your Cart</title>
+<link rel="stylesheet" href="checkoutCart.css" />
+</head>
+<body>
+
+  <!-- Navbar structure from Marc's reference (index-header).
+       Post-login pages show a Profile action instead of Login/Sign Up. -->
+  <header class="index-header">
+    <div class="index-header-content">
+      <a class="index-brand" href="index.html">Makan<span>Hub</span></a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse Stalls</a></li>
+        <li><a href="#">Order History</a></li>
+      </ul>
+      <div class="index-header-actions">
+        <svg class="cart-icon" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cart">
+          <!-- green trapezoid basket -->
+          <path d="M13 15 H41 L37 31 H17 Z" fill="#4ec285"/>
+          <!-- black handle -->
+          <path d="M6 8 H11 L13 15" stroke="#0b1115" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- black lower rail -->
+          <path d="M13 31 H37" stroke="#0b1115" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M13 31 L9 37 H39" stroke="#0b1115" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- wheels -->
+          <circle cx="16" cy="42" r="3" fill="#0b1115"/>
+          <circle cx="34" cy="42" r="3" fill="#0b1115"/>
+        </svg>
+        <button class="profile-pill">Profile</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <h1 class="page-title">Your Cart</h1>
+    <p class="page-sub">Review your items before checking out.</p>
+
+    <div class="grid">
+      <!-- Cart items -->
+      <div class="card">
+        <div class="card-head">Items</div>
+        <div id="cartItems"><!-- rendered by JS --></div>
+      </div>
+
+      <!-- Order Summary (#0B1115) -->
+      <div class="summary">
+        <h3>Order Summary</h3>
+        <div class="sum-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+        <div class="sum-row"><span>GST (9%)</span><span id="gst">$0.00</span></div>
+        <div class="sum-row"><span>Service charge (10%)</span><span id="service">$0.00</span></div>
+        <div class="sum-row"><span>Rush hour fee (5%)</span><span id="rush">$0.00</span></div>
+        <div class="sum-total"><span>Total</span><span id="total">$0.00</span></div>
+
+        <div class="pay-label">Payment method</div>
+        <select class="pay-select" id="payMethod">
+          <option value="PayNow">PayNow</option>
+          <option value="GrabPay">GrabPay</option>
+          <option value="Credit">Credit Card</option>
+          <option value="NETS">NETS</option>
+          <option value="Cash">Cash</option>
+        </select>
+
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="checkoutCart.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/* ==========================================================================
+   Design tokens (from FED UI Specs SPMBEDASG)
+   ========================================================================== */
+:root {
+  --color-primary-dark: #255C3F;
+  --color-primary: #4EC285;
+  --color-primary-light: #E9F8F0;
+  --color-ink: #0B1115;
+
+  --color-yellow: #E6AF2E;
+  --color-blue: #4285F4;
+  --color-red: #EA4335;
+
+  --color-gray-200: #E5E5E5;
+  --color-gray-500: #6B7280;
+  --color-gray-border: #D9DCE1;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --radius-card: 24px;      /* rounded-3xl */
+  --radius-image: 12px;     /* rounded-xl */
+  --radius-pill: 999px;
+
+  --space-card-padding: 20px;      /* p-5, min inner padding for cards */
+  --space-image-gap: 50px;         /* gap between dish image and text block */
+  --control-height: 44px;          /* header/filter control height */
+  --page-margin: 100px;            /* left/right page margin on desktop */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: var(--font-regular);
+  color: var(--color-ink);
+  background: #FFFFFF;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+  border-bottom: 1px solid var(--color-gray-border);
+}
+
+.site-header__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px var(--page-margin);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: var(--font-bold);
+}
+
+.main-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.main-nav__link {
+  font-weight: var(--font-medium);
+  color: var(--color-ink);
+}
+
+.main-nav__link--active {
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-dark);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart-icon {
+  display: flex;
+  color: var(--color-primary-dark);
+}
+
+.profile-pill {
+  height: var(--control-height);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-200);
+  font-weight: var(--font-semibold);
+}
+
+/* ==========================================================================
+   Page layout
+   ========================================================================== */
+.order-history__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px var(--page-margin) 120px;
+}
+
+.order-history__title {
+  font-size: 1.75rem;
+  font-weight: var(--font-bold);
+  margin: 0 0 24px;
+}
+
+/* ==========================================================================
+   Filter bar
+   ========================================================================== */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-bar__label {
+  font-weight: var(--font-semibold);
+}
+
+.filter-bar__select {
+  height: var(--control-height);
+  padding: 0 16px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  background: var(--color-primary-light);
+  font-family: inherit;
+  font-weight: var(--font-medium);
+  color: var(--color-ink);
+}
+
+.filter-bar__button {
+  height: var(--control-height);
+  padding: 0 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-yellow);
+  color: var(--color-ink);
+  font-family: inherit;
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+}
+
+.filter-bar__button:hover {
+  filter: brightness(0.95);
+}
+
+/* ==========================================================================
+   Order list & cards
+   ========================================================================== */
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-card-padding);
+}
+
+.order-card {
+  position: relative;
+  display: flex;
+  gap: var(--space-image-gap);
+  padding: var(--space-card-padding);
+  border: 1px solid var(--color-gray-border);
+  border-radius: var(--radius-card);
+}
+
+.order-card__image {
+  flex: 0 0 160px;
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-image);
+  background: var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-500);
+  font-weight: var(--font-medium);
+  overflow: hidden;
+}
+
+.order-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.order-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.order-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.order-card__heading {
+  min-width: 0;
+}
+
+.order-card__hawker {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: var(--font-semibold);
+}
+
+.order-card__stall {
+  margin: 4px 0 0;
+  font-weight: var(--font-regular);
+  color: var(--color-gray-500);
+}
+
+.order-card__id {
+  flex: 0 0 auto;
+  font-weight: var(--font-medium);
+  color: var(--color-gray-500);
+}
+
+.order-card__status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: var(--font-semibold);
+  text-transform: capitalize;
+}
+
+.order-card__status--preparing {
+  background: #FFF3DC;
+  color: #9A6A00;
+}
+
+.order-card__status--completed {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.order-card__meta {
+  display: flex;
+  gap: 48px;
+  margin-top: 16px;
+}
+
+.order-card__meta-label {
+  margin: 0;
+  font-weight: var(--font-semibold);
+}
+
+.order-card__meta-value {
+  margin: 4px 0 0;
+  font-weight: var(--font-regular);
+  color: var(--color-gray-500);
+}
+
+/* ==========================================================================
+   Empty state
+   ========================================================================== */
+.order-list__empty {
+  margin-top: 24px;
+  text-align: center;
+  color: var(--color-gray-500);
+  font-weight: var(--font-medium);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 900px) {
+  :root {
+    --page-margin: 24px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .order-card {
+    flex-direction: column;
+  }
+
+  .order-card__image {
+    width: 100%;
+    height: 140px;
+  }
+
+  .order-card__meta {
+    gap: 24px;
+  }
+}

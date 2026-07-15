@@ -1,0 +1,129 @@
+/* ============================================================
+   MakanHub - Checkout Completion
+   Same navbar as the cart page (Marc's index-header reference).
+   Completion panel keeps the green "success" treatment.
+   ============================================================ */
+:root {
+  --green: #4ec285;
+  --green-500: #2e9e6b;
+  --green-900: #0f3d2e;
+  --green-400: #3fb87d;
+  --black: #0b1115;
+  --grey: #6b7280;
+  --border: #cfcfcf;
+  --muted: #6b7c74;
+  --white: #ffffff;
+  --radius: 48px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--black);
+  background: #fff;
+  line-height: 1.5;
+}
+a { color: var(--black); text-decoration: none; }
+button { font: inherit; }
+
+/* ---------- Navbar (Marc's reference) ---------- */
+.index-header-content {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+  padding-top: 42px;
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.index-brand { color: var(--black); font-size: 25px; font-weight: 700; }
+.index-brand span { color: var(--black); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px;
+  margin: 0; padding: 0; list-style: none;
+}
+.nav-links a { font-size: 15px; font-weight: 500; color: var(--black); }
+.nav-links a:hover { color: var(--green); }
+.index-header-actions { display: flex; align-items: center; gap: 28px; }
+.profile-pill {
+  padding: 11px 24px;
+  border-radius: 999px;
+  background: #d5d6da;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+/* ---------- Completion panel ---------- */
+.wrap { display: flex; justify-content: center; padding: 48px 20px; }
+.panel {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(165deg, var(--green-400), var(--green-900));
+  color: var(--white);
+  border-radius: var(--radius);      /* 48px, matches cart */
+  padding: 34px 30px;
+  box-shadow: 0 20px 50px rgba(15,61,46,0.25);
+}
+.tick {
+  width: 64px; height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.18);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+  animation: pop 0.4s ease;
+}
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.panel h1 { text-align: center; font-size: 24px; font-weight: 600; margin-bottom: 4px; }
+.ref { text-align: center; font-size: 13px; opacity: 0.85; margin-bottom: 24px; }
+
+.items-box {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.items-head {
+  display: flex; justify-content: space-between;
+  font-size: 13px; opacity: 0.85; margin-bottom: 12px;
+}
+.line { display: flex; justify-content: space-between; font-size: 14px; padding: 6px 0; }
+.line .q { opacity: 0.8; }
+
+.total-box {
+  background: var(--white);
+  color: var(--green-900);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex; justify-content: space-between;
+  font-weight: 700; font-size: 16px;
+  margin-bottom: 10px;
+}
+.paid-tag { text-align: center; font-size: 13px; opacity: 0.9; margin-bottom: 22px; }
+.paid-tag b { text-transform: capitalize; }
+
+.btn-primary {
+  display: block; width: 100%;
+  background: var(--black);
+  color: var(--white);
+  border: none; border-radius: 14px;
+  padding: 14px; font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center; text-decoration: none;
+}
+.btn-primary:hover { background: #000; }
+.btn-link {
+  display: block; text-align: center; margin-top: 14px;
+  color: var(--white); font-size: 14px; text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  .index-header-content { padding-top: 24px; }
+  .nav-links { display: none; }
+}

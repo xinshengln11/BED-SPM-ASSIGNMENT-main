@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MakanHub — Checkout Complete</title>
+<link rel="stylesheet" href="checkoutCompletion.css" />
+</head>
+<body>
+
+  <!-- Navbar structure from Marc's reference (post-login: Profile pill) -->
+  <header class="index-header">
+    <div class="index-header-content">
+      <a class="index-brand" href="index.html">MakanHub</a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse Stalls</a></li>
+        <li><a href="#">Order History</a></li>
+      </ul>
+      <div class="index-header-actions">
+        <svg class="cart-icon" width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cart">
+          <!-- green trapezoid basket -->
+          <path d="M13 15 H41 L37 31 H17 Z" fill="#4ec285"/>
+          <!-- black handle -->
+          <path d="M6 8 H11 L13 15" stroke="#0b1115" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- black lower rail -->
+          <path d="M13 31 H37" stroke="#0b1115" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M13 31 L9 37 H39" stroke="#0b1115" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- wheels -->
+          <circle cx="16" cy="42" r="3" fill="#0b1115"/>
+          <circle cx="34" cy="42" r="3" fill="#0b1115"/>
+        </svg>
+        <button class="profile-pill">Profile</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="panel">
+      <div class="tick">✓</div>
+      <h1>Checkout Complete!</h1>
+      <p class="ref" id="ref">Order reference: —</p>
+
+      <div class="items-box">
+        <div class="items-head">
+          <span>Items</span>
+          <span id="itemCount">0 items</span>
+        </div>
+        <div id="itemLines"><!-- rendered by JS --></div>
+      </div>
+
+      <div class="total-box">
+        <span>Total</span>
+        <span id="total">$0.00</span>
+      </div>
+      <p class="paid-tag">Payment received via <b id="payMethod">—</b></p>
+
+      <a class="btn-primary" href="#">Order History</a>
+      <a class="btn-link" href="checkoutCart.html">Back to Home</a>
+    </div>
+  </div>
+
+  <script src="checkoutCompletion.js"></script>
+</body>
+</html>

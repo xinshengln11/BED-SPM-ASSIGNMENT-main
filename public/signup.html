@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MakanHub | Sign Up</title>
+
+  <link rel="stylesheet" href="signup.css">
+
+</head>
+<script src="signup.js"></script>
+<body class="signup-page">
+
+  <header class="signup-header">
+    <div class="signup-header-content">
+
+      <a class="signup-brand" href="index.html">
+        MakanHub
+      </a>
+
+      <div class="signup-header-actions">
+        <a class="signup-login-link" href="login.html">
+          Login
+        </a>
+
+        <a class="signup-back-button" href="index.html">
+          Go Back
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="signup-layout">
+
+    <!-- Left side -->
+    <section class="signup-section">
+
+      <h1>Sign up</h1>
+
+      <p class="signup-account-text">
+        Have an account?
+        <a href="login.html">Sign in</a>
+      </p>
+
+      <form id="signupForm" novalidate>
+
+        <div class="signup-field">
+          <label for="signupUsername">
+            Username
+          </label>
+
+          <input
+            id="signupUsername"
+            name="username"
+            type="text"
+            maxlength="50"
+            required
+          >
+        </div>
+
+        <div class="signup-field">
+          <label for="signupEmail">
+            Email
+          </label>
+
+          <input
+            id="signupEmail"
+            name="email"
+            type="email"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="signup-field">
+          <label for="signupAddress">
+            Address
+          </label>
+
+          <input
+            id="signupAddress"
+            name="address"
+            type="text"
+            maxlength="255"
+            required
+          >
+        </div>
+
+        <div class="signup-field">
+          <label for="signupRole">
+            Role
+          </label>
+
+          <select
+            id="signupRole"
+            name="role"
+            class="signup-role-customer"
+          >
+            <option value="customer">
+              Customer
+            </option>
+
+            <option value="stall owner">
+              Stall Owner
+            </option>
+
+            <option value="operator">
+              Operator
+            </option>
+
+            <option value="nea officer">
+              NEA Officer
+            </option>
+          </select>
+        </div>
+
+        <div class="signup-field">
+
+          <div class="signup-password-label-row">
+            <label for="signupPassword">
+              Password
+            </label>
+
+            <button
+              class="signup-password-toggle"
+              type="button"
+              data-toggle-password="signupPassword"
+            >
+              Hide
+            </button>
+          </div>
+
+          <input
+            id="signupPassword"
+            name="password"
+            type="password"
+            minlength="8"
+            required
+          >
+
+        </div>
+
+        <button
+          id="signupButton"
+          class="signup-register-button signup-button-customer"
+          type="submit"
+        >
+          Register
+        </button>
+
+        <p
+          id="signupMessage"
+          class="message"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+    </section>
+
+    <!-- Right side -->
+    <div class="signup-image-panel" aria-hidden="true"></div>
+
+  </main>
+</body>
+</html>

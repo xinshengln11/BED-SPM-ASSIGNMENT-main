@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MakanHub | Login</title>
+
+  <link rel="stylesheet" href="login.css">
+<script src="login.js" defer></script>
+</head>
+
+<body class="login-page">
+
+  <header class="login-header">
+    <div class="login-header-content">
+      <a class="login-brand" href="index.html">MakanHub</a>
+
+      <div class="login-header-actions">
+        <a class="go-back-link" href="index.html">Go Back</a>
+        <a class="signup-pill" href="signup.html">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="login-layout">
+
+    <!-- Left side -->
+    <section class="login-section">
+
+      <h1>Log in</h1>
+
+      <p class="account-text">
+        Don't have an account?
+        <a href="signup.html">Sign up</a>
+      </p>
+
+      <form id="loginForm" novalidate>
+
+        <div class="login-field">
+          <label for="identifier">Email or Username</label>
+
+          <input
+            id="identifier"
+            name="identifier"
+            type="text"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="login-field">
+
+          <div class="password-label-row">
+            <label for="password">Password</label>
+
+            <button
+              class="outside-password-toggle"
+              type="button"
+              data-toggle-password="password"
+            >
+              Hide
+            </button>
+          </div>
+
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+
+          <div class="forgot-password-container">
+            <a href="#" class="forgot-password-link">
+              Forget your password?
+            </a>
+          </div>
+
+        </div>
+
+        <button class="login-button" type="submit">
+          Log in
+        </button>
+
+        <div class="or-divider">
+          <span></span>
+          <p>Or</p>
+          <span></span>
+        </div>
+
+        <button
+          class="google-login-button"
+          type="button"
+          id="googleLoginButton"
+        >
+          <span class="google-logo">G</span>
+          Sign in with Google
+        </button>
+
+        <p
+          id="loginMessage"
+          class="message"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+    </section>
+
+    <!-- Right side -->
+    <div class="login-image-panel" aria-hidden="true"></div>
+
+  </main>
+</body>
+</html>
